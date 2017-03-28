@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,45 +22,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tey-jr-sxE">
-                                <rect key="frame" x="16" y="398" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Descontar IVA"/>
-                                <connections>
-                                    <action selector="btDescIVA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixf-Cy-r3t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-2k-VOd">
-                                <rect key="frame" x="257" y="398" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calcular IVA"/>
-                                <connections>
-                                    <action selector="btCalcIVA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofW-OW-OJU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0,00€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmL-n4-7do">
-                                <rect key="frame" x="137" y="69" width="100" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9Lu-tW-ms4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-9S-21e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IVt-kw-54V">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-PF-0ft">
+                                <rect key="frame" x="16" y="378" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tey-jr-sxE">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                        <state key="normal" title="Descontar IVA"/>
+                                        <connections>
+                                            <action selector="btDescIVA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixf-Cy-r3t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-2k-VOd">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                        <state key="normal" title="Calcular IVA"/>
+                                        <connections>
+                                            <action selector="btCalcIVA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofW-OW-OJU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmL-n4-7do">
+                                <rect key="frame" x="150" y="60" width="74" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-OK-aDc">
-                                <rect key="frame" x="139" y="318" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-OK-aDc">
+                                <rect key="frame" x="148" y="318" width="79.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="An application by Juaki97" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uff-bv-awN">
-                                <rect key="frame" x="79" y="638" width="216" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An application by Juaki97" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uff-bv-awN">
+                                <rect key="frame" x="89.5" y="638.5" width="195.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P2R-9S-21e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="61K-JH-kqL"/>
+                            <constraint firstItem="CmL-n4-7do" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="80a-Dk-HZp"/>
+                            <constraint firstItem="CmL-n4-7do" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8gW-ID-wMb"/>
+                            <constraint firstAttribute="trailing" secondItem="9Lu-tW-ms4" secondAttribute="trailing" id="9Ld-2z-wYd"/>
+                            <constraint firstItem="UD9-OK-aDc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IBl-x2-1QL"/>
+                            <constraint firstItem="9e6-PF-0ft" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JXG-8G-bYF"/>
+                            <constraint firstItem="UD9-OK-aDc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MFt-f6-uGm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9e6-PF-0ft" secondAttribute="trailing" id="PfS-c5-Dmh"/>
+                            <constraint firstItem="9Lu-tW-ms4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RIH-4k-W1A"/>
+                            <constraint firstItem="9Lu-tW-ms4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XFu-Yk-AWI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uff-bv-awN" secondAttribute="bottom" constant="8" id="YTP-tH-5OJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Lu-tW-ms4" secondAttribute="bottom" id="biA-7d-Wpu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P2R-9S-21e" secondAttribute="bottom" id="c95-Ia-OjZ"/>
+                            <constraint firstItem="9e6-PF-0ft" firstAttribute="top" secondItem="UD9-OK-aDc" secondAttribute="bottom" constant="30" id="foF-sK-4gN"/>
+                            <constraint firstItem="Uff-bv-awN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jkq-Pp-aa1"/>
+                            <constraint firstAttribute="trailing" secondItem="P2R-9S-21e" secondAttribute="trailing" id="mUQ-sL-80q"/>
+                            <constraint firstItem="P2R-9S-21e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yL0-pS-csx"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="campoImporte" destination="CmL-n4-7do" id="lVs-fn-IVA"/>
@@ -71,4 +102,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="640" height="1136"/>
+    </resources>
 </document>
